@@ -1,32 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite">
-	<test name="chrome">
+<suite name="Suite" parallel="tests">
+	<test name="chrome" parallel="true" thread-count="6">
 		<parameter name="browser" value="chrome"></parameter>
 		<classes>
 			<class name="com.pos.testcases.CreateNewVendor" />
-			<!-- <class name="com.pos.testcases.EditVendor" /> -->
-			<!-- <class name="com.pos.testcases.DeleteVendor" /> -->
+			<class name="com.pos.testcases.EditVendor" />
+			<class name="com.pos.testcases.DeleteVendor" />
+
 		</classes>
 	</test>
-
-	<!-- 
-	<test name="firefox">
+	<test name="firefox" parallel="true" thread-count="6">
 		<parameter name="browser" value="firefox"></parameter>
 		<classes>
 			<class name="com.pos.testcases.CreateNewProduct" />
 			<class name="com.pos.testcases.EditProduct" />
 			<class name="com.pos.testcases.DeleteProduct" />
+
 		</classes>
 	</test>
 
-	<test name="MicrosoftEdge">
+	<test name="MicrosoftEdge" parallel="true" thread-count="6">
 		<parameter name="browser" value="edge"></parameter>
 		<classes>
 			<class name="com.pos.testcases.CreateNewCustomer" />
 			<class name="com.pos.testcases.EditCustomer" />
 			<class name="com.pos.testcases.DeleteCustomer" />
+
 		</classes>
 	</test>
-	-->
+
 </suite>
